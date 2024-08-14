@@ -27,7 +27,7 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error("ERROR:", error);
     res
-      .status(500)
+      .status(400)
       .json({ error: "Error processing the text-to-speech request" });
   }
 }

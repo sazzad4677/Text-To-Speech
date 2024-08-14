@@ -16,6 +16,6 @@ export default async function handler(req, res) {
     res.status(200).json({ voices });
   } catch (error) {
     console.error("ERROR:", error);
-    res.status(500).json({ error: "Error fetching voices" });
+    res.status(400).json({ error: "Error fetching voices" });
   }
 }

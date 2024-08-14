@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Text-To-Speech Web Application
 
-## Getting Started
+This is a web application that provides two types of Text-to-Speech (TTS) services: a free browser-based TTS using `react-speech-kit` and a cloud-based TTS using Google Cloud Text-to-Speech API. The application allows users to input text, select a voice, and listen to the generated speech.
 
-First, run the development server:
+## Features
+
+- **Browser-based Text-to-Speech**: Utilizes `react-speech-kit` for free, client-side text-to-speech synthesis.
+- **Google Cloud Text-to-Speech**: Integrates with Google Cloud to provide high-quality speech synthesis with support for multiple voices and languages.
+- **Voice Selection**: Users can select different voices for both the free TTS and Google TTS services.
+- **Playback Controls**: Includes options to start and stop speech playback.
+
+## Installation
+
+### Prerequisites
+
+- **Node.js**: Ensure that you have Node.js installed (version 12 or higher).
+- **Google Cloud Account**: You will need a Google Cloud account with access to the Text-to-Speech API. Follow the [Google Cloud Text-to-Speech Documentation](https://cloud.google.com/text-to-speech/docs) to set up your API key.
+
+### Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/sazzad4677/Text-To_Speech.git
+cd Text-To_Speech
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install Dependencies
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Setup Environment Variables
 
-## Learn More
+- Create a **.env.local** file in the root of your project.
+- Add your Google Cloud credentials and API key.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+GOOGLE_APPLICATION_CREDENTIALS=path/to/your-google-cloud-key.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Replace path/to/your-google-cloud-key.json with the actual path to your Google Cloud JSON key file.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Run the Application
 
-## Deploy on Vercel
+```bash
+ npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open your browser and navigate to http://localhost:3000 to see the application in action.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Usage
+
+### Free Text-to-Speech
+
+1. Enter the text you want to convert to speech in the first textarea.
+2. Select a voice from the dropdown list.
+3. Click the "Speak" button to listen to the synthesized speech.
+4. Click the "Stop" button to stop the speech at any time.
+
+### Google Cloud Text-to-Speech
+
+1. Enter the text you want to convert to speech in the second textarea.
+2. Select a voice from the dropdown list of Google Cloud voices.
+3. Click the "Speak" button to listen to the synthesized speech using Google Cloud.
+4. Click the "Stop" button to stop the speech at any time.
+
+## Project Structure
+
+- src/app/TextToSpeechComponent.js: Main component handling both free and Google Cloud TTS functionalities.
+- pages/api/voices.js: API route to fetch available voices from Google Cloud TTS.
+- pages/api/tts.js: API route to handle text-to-speech requests using Google Cloud TTS.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgements
+
+- react-speech-kit for providing the free, client-side TTS functionality.
+- Google Cloud Text-to-Speech for offering high-quality TTS services.
