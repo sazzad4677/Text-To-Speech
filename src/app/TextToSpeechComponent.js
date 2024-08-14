@@ -104,7 +104,7 @@ export default function TextToSpeechComponent() {
   };
 
   return (
-    <div className="text-black">
+    <div className="text-black ">
       {/* Free text-to-speech section */}
       <div>
         <h1 className="text-2xl font-bold text-center text-white">

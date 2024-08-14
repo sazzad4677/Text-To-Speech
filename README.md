@@ -9,6 +9,10 @@ This is a web application that provides two types of Text-to-Speech (TTS) servic
 - **Voice Selection**: Users can select different voices for both the free TTS and Google TTS services.
 - **Playback Controls**: Includes options to start and stop speech playback.
 
+## Screenshot
+
+![Application Screenshot](image.png)
+
 ## Installation
 
 ### Prerequisites
