@@ -35,7 +35,7 @@ npm install
 
 ### Setup Environment Variables
 
-- Create a **.env.local** file in the root of your project.
+- Create a `.env.local` file in the root of your project.
 - Add your Google Cloud credentials and API key.
 
 ```bash
