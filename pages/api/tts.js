@@ -1,6 +1,9 @@
+import { getGoogleCloudCredentials } from "@/utils/googleCloudCredentials";
 import { TextToSpeechClient } from "@google-cloud/text-to-speech";
 
-const client = new TextToSpeechClient();
+const client = new TextToSpeechClient({
+  credentials: getGoogleCloudCredentials(),
+});
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
